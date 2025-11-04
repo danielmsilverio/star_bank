@@ -53,7 +53,7 @@ Buscando melhorar o projeto em alguns pontos que senti falta, segue os planos de
 <br> Para os próximos pontos, precisei adicionar .env e ajustar as variáveis de ambiente das configs;
 
 - Adicionar Docker
-<br>Aqui deu um pouco de trabalho, revisitei alguns projetos antigos para lembrar um pouco da estrutura. Não deu para fugir do entrypoints no primeiro momento. Adicionarei o compose para subir postgres também.
+<br>Aqui deu um pouco de trabalho, revisitei alguns projetos antigos para lembrar um pouco da estrutura. Não deu para fugir do entrypoints no primeiro momento. Adicionado o compose para subir com o bd também
 
 - Adicionar CI
 - Atualizar o README com todos os tópicos
