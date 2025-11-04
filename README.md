@@ -46,7 +46,15 @@ Outras pontos de melhoria pode ver em [Próximos passos](#próximos-passos)
 ## Atalhos mix
 
 ## Próximos passos
-- Adicionar docker
+
+Buscando melhorar o projeto em alguns pontos que senti falta, segue os planos de atualização:
+
+- Adicionar .env.example e atualizar .gitignore
+<br> Para os próximos pontos, precisei adicionar .env e ajustar as variáveis de ambiente das configs;
+
+- Adicionar Docker
+<br>Aqui deu um pouco de trabalho, revisitei alguns projetos antigos para lembrar um pouco da estrutura. Não deu para fugir do entrypoints no primeiro momento. Adicionarei o compose para subir postgres também.
+
 - Adicionar CI
 - Atualizar o README com todos os tópicos
 - Criar histórico de transferências

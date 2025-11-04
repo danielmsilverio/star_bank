@@ -1,14 +1,15 @@
 import Config
 
-# Configure your database
+# Configure your database (override with POSTGRES_* env vars when running in Docker)
 config :star_bank, StarBank.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "star_bank_dev",
+  username: System.get_env("POSTGRES_USER", "postgres"),
+  password: System.get_env("POSTGRES_PASSWORD", "postgres"),
+  hostname: System.get_env("POSTGRES_HOST", "localhost"),
+  port: String.to_integer(System.get_env("POSTGRES_PORT", "5432")),
+  database: System.get_env("POSTGRES_DB", "star_bank_dev"),
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: String.to_integer(System.get_env("POOL_SIZE", "10"))
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -17,9 +18,8 @@ config :star_bank, StarBank.Repo,
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
 config :star_bank, StarBankWeb.Endpoint,
-  # Binding to loopback ipv4 address prevents access from other machines.
-  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: String.to_integer(System.get_env("PORT") || "4000")],
+  # Bind to all interfaces so the app is reachable outside the container
+  http: [ip: {0, 0, 0, 0}, port: String.to_integer(System.get_env("PORT") || "4000")],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,

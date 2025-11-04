@@ -25,3 +25,37 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 star_bank-*.tar
 
+
+# Editor/OS files
+.elixir_ls/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment files and direnv
+.env
+.env.*
+.envrc
+.direnv/
+
+# Phoenix static build artifacts
+priv/static/assets/
+priv/static/cache_manifest.json
+
+# Node/JS tooling (if present)
+assets/node_modules/
+assets/.esbuild/
+assets/.parcel-cache/
+assets/.cache/
+node_modules/
+
+# Dialyzer and PLT caches (if used)
+_plt/
+.dialyzer/*.plt
+
+# Docker
+.docker/
+docker-compose*.yaml
+docker-compose*.yml
+*.orig
